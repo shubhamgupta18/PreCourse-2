@@ -1,4 +1,6 @@
-class LinkedList 
+package Default;
+
+class LinkedList
 { 
     Node head; // head of linked list 
   
@@ -20,6 +22,21 @@ class LinkedList
     { 
         //Write your code here
 	//Implement using Fast and slow pointers
+    	Node tnode = head;
+    	Node slwptr = head;
+    	Node fastptr = head;
+    	
+    	while(fastptr.next != null) {
+    		
+    		fastptr = fastptr.next;
+    		if(fastptr.next != null) {
+    			
+    			fastptr = fastptr.next;
+    			slwptr = slwptr.next;
+    			
+    		}
+    	}
+    	System.out.println("middle of the linked list is"+ slwptr.data);
     } 
   
     public void push(int new_data) 
